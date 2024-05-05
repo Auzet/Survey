@@ -28,22 +28,21 @@ import { useForm } from "react-hook-form";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { toast } from "./ui/use-toast";
-
-const formSchema = zod.object({
-  name: zod.string().min(4),
-  description: zod.string().optional(),
-});
-
-type formSchemaType = zod.infer<typeof formSchema>;
+import { formSchemaType, formSchema } from "@/schemas/form";
+import { CreateForm } from "@/actions/form";
 
 function CreateFormBtn() {
   const form = useForm<formSchemaType>({
     resolver: zodResolver(formSchema),
   });
 
-  function onSubmit(values: formSchemaType) {
+  async function onSubmit(values: formSchemaType) {
     try {
-      console.log(values)
+      await CreateForm(values);
+      toast({
+        title: "Success",
+        description: "Form created",
+      })
     } 
     catch (error) {
         toast({
@@ -96,7 +95,7 @@ function CreateFormBtn() {
         </Form>
         <DialogFooter>
           <Button
-          onClick={() => {form.handleSubmit(onSubmit);}}
+            onClick={form.handleSubmit(onSubmit)}
             disabled={form.formState.isSubmitting}
             className="w-full mt-4"
           >
