@@ -19,7 +19,7 @@ import { Button } from "./ui/button";
 import { BiSolidTrash } from "react-icons/bi";
 
 function Designer() {
-  const {
+  const { 
     elements,
     addElement,
     selectedElement,

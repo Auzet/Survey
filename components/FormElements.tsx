@@ -48,7 +48,7 @@ export type FormElement = {
     elementInstance: FormElementInstance;
   }>;
 
-  //validate: (formElement: FormElementInstance, currentValue: string) => boolean;
+  validate: (formElement: FormElementInstance, currentValue: string) => boolean;
 };
 
 export type FormElementInstance = {

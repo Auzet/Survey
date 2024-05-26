@@ -37,7 +37,7 @@ export const ParagprahFieldFormElement: FormElement = {
   formComponent: FormComponent,
   propertiesComponent: PropertiesComponent,
 
-  //validate: () => true,
+  validate: () => true,
 };
 
 type CustomInstance = FormElementInstance & {

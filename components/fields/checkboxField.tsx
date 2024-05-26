@@ -44,14 +44,14 @@ export const CheckboxFieldFormElement: FormElement = {
   formComponent: FormComponent,
   propertiesComponent: PropertiesComponent,
 
-  /* validate: (formElement: FormElementInstance, currentValue: string): boolean => {
+  validate: (formElement: FormElementInstance, currentValue: string): boolean => {
     const element = formElement as CustomInstance;
     if (element.extraAttributes.required) {
       return currentValue === "true";
     }
 
     return true;
-  }, */
+  },
 };
 
 type CustomInstance = FormElementInstance & {
@@ -111,8 +111,8 @@ function FormComponent({
           setValue(value);
           if (!submitValue) return;
           const stringValue = value ? "true" : "false";
-          /* const valid = CheckboxFieldFormElement.validate(element, stringValue);
-          setError(!valid); */
+          const valid = CheckboxFieldFormElement.validate(element, stringValue);
+          setError(!valid);
           submitValue(element.id, stringValue);
         }}
       />

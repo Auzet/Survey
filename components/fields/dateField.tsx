@@ -48,14 +48,14 @@ export const DateFieldFormElement: FormElement = {
   formComponent: FormComponent,
   propertiesComponent: PropertiesComponent,
 
-  /* validate: (formElement: FormElementInstance, currentValue: string): boolean => {
+  validate: (formElement: FormElementInstance, currentValue: string): boolean => {
     const element = formElement as CustomInstance;
     if (element.extraAttributes.required) {
       return currentValue.length > 0;
     }
 
     return true;
-  }, */
+  },
 };
 
 type CustomInstance = FormElementInstance & {
@@ -131,8 +131,8 @@ function FormComponent({
 
               if (!submitValue) return;
               const value = date?.toUTCString() || "";
-              /* const valid = DateFieldFormElement.validate(element, value);
-              setError(!valid); */
+              const valid = DateFieldFormElement.validate(element, value);
+              setError(!valid);
               submitValue(element.id, value);
             }}
             initialFocus

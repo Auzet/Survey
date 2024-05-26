@@ -45,14 +45,14 @@ export const NumberFieldFormElement: FormElement = {
   formComponent: FormComponent,
   propertiesComponent: PropertiesComponent,
 
-  /* validate: (formElement: FormElementInstance, currentValue: string): boolean => {
+  validate: (formElement: FormElementInstance, currentValue: string): boolean => {
     const element = formElement as CustomInstance;
     if (element.extraAttributes.required) {
       return currentValue.length > 0;
     }
 
     return true;
-  }, */
+  },
 };
 
 type CustomInstance = FormElementInstance & {
@@ -108,9 +108,9 @@ function FormComponent({
         onChange={(e) => setValue(e.target.value)}
         onBlur={(e) => {
           if (!submitValue) return;
-          /* const valid = NumberFieldFormElement.validate(element, e.target.value);
+          const valid = NumberFieldFormElement.validate(element, e.target.value);
           setError(!valid);
-          if (!valid) return; */
+          if (!valid) return;
           submitValue(element.id, e.target.value);
         }}
         value={value}

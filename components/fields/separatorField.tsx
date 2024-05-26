@@ -22,7 +22,7 @@ export const SeparatorFieldFormElement: FormElement = {
   formComponent: FormComponent,
   propertiesComponent: PropertiesComponent,
 
-  //validate: () => true,
+  validate: () => true,
 };
 
 function DesignerComponent({ elementInstance }: { elementInstance: FormElementInstance }) {

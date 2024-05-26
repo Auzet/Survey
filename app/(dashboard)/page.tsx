@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import {BiRightArrowAlt} from 'react-icons/bi';
 import { FaEdit } from "react-icons/fa";
+import { AttachedField } from "@/components/fields/attachedField";
 
 export default function Home() {
   return (
@@ -88,7 +89,7 @@ function StatsCards(props: StatsCardProps) {
   );
 }
 
-function StatsCard({
+export function StatsCard({
   title,
   value,
   icon,
