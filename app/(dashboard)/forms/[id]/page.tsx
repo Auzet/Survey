@@ -29,6 +29,7 @@ import { DialogTrigger } from "@radix-ui/react-dialog";
 import { MdPreview } from "react-icons/md";
 import ViewBtn from "@/components/ViewBtn";
 import { Input } from "@/components/ui/input";
+import MailBtn from "@/components/MailBtn";
 
 async function FormDetailPage({
   params,
@@ -64,6 +65,7 @@ async function FormDetailPage({
       <div className="py-4 border-b border-muted">
         <div className="container flex gap-2 items-center justify-between">
           <FormLinkShare shareUrl={form.shareUrl} />
+          <MailBtn />
         </div>
       </div>
       <div className="w-full pt-8 gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 container">

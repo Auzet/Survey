@@ -193,3 +193,22 @@ export async function GetFormWithSubmissionsByUrl(formUrl: string) {
     },
   });
 }
+
+export async function SendEmails(emails: string[]) {
+  const user = await currentUser();
+  const KEY = "6qwr857oniw481t653ymgdoa8kpzebwg1pch9cie";
+  const link = "http://localhost:3000/submit/3ee30d18-be55-40a4-8c80-5ff18cd862ee"
+  if (!user) {
+    throw new UserNotFoundErr();
+  }
+  //const result = fetch(`https://api.unisender.com/ru/api/createList?format=json&api_key=${KEY}&title=NewListName`)
+  /* emails.map((email, index) =>
+    fetch(`https://api.unisender.com/ru/api/importContacts?format=json&api_key=${KEY}&field_names[0]=email&field_names[1]=email_list_ids&data[${index}][0]=${email}&data[${index}][1]=3`)
+); */
+  /* const message = await fetch(`https://api.unisender.com/ru/api/createEmailMessage?format=json&api_key=${KEY}&sender_name=Survey&sender_email=alexuinzet@yandex.ru&subject=Submit a subcontractor form&body=<p>${link}</p>&list_id=3`);
+  console.log(await message.json()) */
+  const response = await fetch(`https://api.unisender.com/ru/api/createCampaign?format=json&api_key=${KEY}&message_id=226355858`)
+  console.log(await response.json())
+  
+  return 0;
+}
